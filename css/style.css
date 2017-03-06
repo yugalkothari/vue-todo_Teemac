@@ -1,19 +1,16 @@
 .nav-tabs>li>a {
   background-color: #fff; 
   color:#607D8B;
-    border: 0px;
 }
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
   color: #fff;
   background-color: #607D8B;
-  border: 0px;
 }
 
 .nav-tabs>li>a:hover {
   color: #607D8B;
   background-color: #fff;
-    border: 0px;
 }
 
 .white{
