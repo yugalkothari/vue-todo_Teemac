@@ -31,49 +31,50 @@ window.onload = function() {
             displayAddTasks: true,
             displayTaskStatistics: true,
             displayedTasksStat: 'totalTasks',
-            tasks: [{
-                    name: "add edit feature",
+            tasks: [
+                {
+                    name: "add dragula.js",
                     done: true
+                },
+				{
+                    name: "implement dragula js",
+                    done: true
+                },
+				{
+                    name: "remove dragula js",
+                    done: true
+                },
+				{
+                    name: "add sortable js",
+                    done: true
+                },
+				{
+                    name: "implement sortable js",
+                    done: true
+                },
+				{
+                    name: "change ui again",
+                    done: false
+                },
+				{
+                    name: "add edit feature",
+                    done: false
                 },
                 {
                     name: "change ui",
-                    done: true
+                    done: false
                 },
                 {
                     name: "add bootstrap",
-                    done: true
+                    done: false
                 },
 
                 {
                     name: "fix bugs",
-                    done: true
+                    done: false
                 },
                 {
                     name: "add task status",
-                    done: true
-                },
-                {
-                    name: "add dragula.js",
-                    done: false
-                },
-				{
-                    name: "implement dragula js",
-                    done: false
-                },
-				{
-                    name: "remove dragula js",
-                    done: false
-                },
-				{
-                    name: "add sortable js",
-                    done: false
-                },
-				{
-                    name: "implement sortable js",
-                    done: false
-                },
-				{
-                    name: "change ui again",
                     done: false
                 },
 
