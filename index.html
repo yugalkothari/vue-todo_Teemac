@@ -201,22 +201,8 @@
             $("#success-alert").hide();
             $("#deleted-alert").hide();
             $("#completed-alert").hide();
-
-            $("#add").click(function showAlert() {
-                $("#success-alert").alert();
-                $("#success-alert").fadeTo(2000, 500).slideUp(500, function() {
-                    $("#success-alert").slideUp(500);
-                });
-            });
-            $("#deleted,#delete,#del").click(function showAlert() {
-                $("#deleted-alert").alert();
-                $("#deleted-alert").fadeTo(2000, 500).slideUp(500, function() {
-                    $("#deleted-alert").slideUp(500);
-                });
-            });
-
-
-            $('input[type="checkbox"]').click(function() {
+            
+			$('input[type="checkbox"]').click(function() {
                 if ($(this).prop("checked") == true) {
 
                     $("#completed-alert").alert();

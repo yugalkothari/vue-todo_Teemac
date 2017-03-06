@@ -90,10 +90,18 @@ window.onload = function() {
                         name: this.tasks.name,
                         done: false,
                     });
+					$("#success-alert").alert();
+                $("#success-alert").fadeTo(2000, 500).slideUp(500, function() {
+                    $("#success-alert").slideUp(500);
+                });
                 }
             },
             deleteTask: function(task) {
                 this.tasks.splice(this.tasks.indexOf(task), 1);
+				$("#deleted-alert").alert();
+                $("#deleted-alert").fadeTo(2000, 500).slideUp(500, function() {
+                    $("#deleted-alert").slideUp(500);
+                });
             },
             changeTotalTasks: function() {
                 this.displayedTasksStat = 'totalTasks';
