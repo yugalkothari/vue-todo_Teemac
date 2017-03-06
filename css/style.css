@@ -27,3 +27,28 @@
             background-color: #d9534f;
         }
         
+        #circler {
+            background: #d9534f;
+            width: 17px;
+            height: 17px;
+            float: left;
+            margin: 0 5px;
+        }
+        
+        #circleb {
+            background: #5bc0de;
+            width: 17px;
+            height: 17px;
+            float: left;
+            margin: 0 5px;
+        }
+        
+        #circleg {
+            background: #5cb85c;
+            width: 17px;
+            height: 17px;
+            float: left;
+            margin: 0 5px;
+        }
+        
+        

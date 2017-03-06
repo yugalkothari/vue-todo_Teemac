@@ -80,12 +80,15 @@
                                 <div class="well">
                                     <ul class="nav ">
                                         <li>
+                                            <div id="circleb"></div>
                                             <p v-on:mouseover="changeTotalTasks">Total Tasks: {{ tasks.length }}</p>
                                         </li>
                                         <li>
+                                            <div id="circler"></div>
                                             <p v-on:mouseover="changeLeftToDo">Tasks Left: {{ leftToDo }}</p>
                                         </li>
                                         <li>
+                                            <div id="circleg"></div>
                                             <p v-on:mouseover="changeCheckMarked">Completed: {{ checkMarkedTasks }}</p>
                                         </li>
                                         <li class="nav-header">{{ displayedTasksStatView }}</li>
