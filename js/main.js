@@ -133,7 +133,7 @@ window.onload = function() {
                 } else if (this.displayedTasksStat == 'leftToDo') {
                     return 'Tasks Left: ' + this.leftToDo;
                 } else if (this.displayedTasksStat == 'checkMarked') {
-                    return 'Check Marked Tasks: ' + this.checkMarkedTasks;
+                    return 'Completed: ' + this.checkMarkedTasks;
                 } else if (this.displayedTasksStat == 'deletedTasks') {
                     return 'Deleted Tasks: ' + this.deletedTasks;
                 }

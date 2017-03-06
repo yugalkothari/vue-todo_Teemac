@@ -1,3 +1,29 @@
+.nav-tabs>li>a {
+  background-color: #fff; 
+  color:#607D8B;
+    border: 0px;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+  color: #fff;
+  background-color: #607D8B;
+  border: 0px;
+}
+
+.nav-tabs>li>a:hover {
+  color: #607D8B;
+  background-color: #fff;
+    border: 0px;
+}
+
+.white{
+	color:white;
+}
+.grey:hover,.grey{
+	color:white;
+	background-color:#607D8B;
+}
+
  body {
             padding-bottom: 40px;
             padding-top: 60px;
@@ -20,7 +46,7 @@
         }
         
         .green {
-            background-color: #f9f9f9;
+            background-color: #5cb85c;
         }
         
         .red {
@@ -29,6 +55,13 @@
         
         #circler {
             background: #d9534f;
+            width: 17px;
+            height: 17px;
+            float: left;
+            margin: 0 5px;
+        }
+		#circleo {
+            background: #FF5722;
             width: 17px;
             height: 17px;
             float: left;
