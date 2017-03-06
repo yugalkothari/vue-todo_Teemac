@@ -18,6 +18,10 @@
 <body>
     <div class="container" style="margin-left:80px;margin-top:20px;">
         <div id="app" class="col-sm-10 col-sm-offset-1">
+
+
+
+
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
@@ -25,10 +29,10 @@
                             <div class="panel-body">
                                 <form v-on:submit="addTask">
                                     <div class="col-sm-8">
-                                        <input style="margin-left:13px;"type="text" class="form-control" v-model="tasks.name" placeholder="add task & enter">
+                                        <input style="margin-left:13px;" type="text" class="form-control" v-model="tasks.name" placeholder="add task & enter">
                                     </div>
                                     <div class="col-sm-4">
-                                        <input type="submit" class="btn btn-primary" value="AddTask">
+                                        <input id="add" type="submit" class="btn btn-primary" value="AddTask">
                                     </div>
 
                                 </form>
@@ -55,8 +59,8 @@
                                                     <div class="well">
                                                         <todo v-bind:task="task"></todo>
 
-                                                        <span class="glyphicon glyphicon-trash pull-right text-primary" v-on:click="deleteTask(task)"></span>
-                                                        <input type="checkbox" v-model="task.done" v-on:click="done = !done">
+                                                        <span id="deleted" class="glyphicon glyphicon-trash pull-right text-primary" v-on:click="deleteTask(task)"></span>
+                                                        <input id="done" type="checkbox" v-model="task.done" v-on:click="done = !done">
                                                     </div>
 
                                                 </div>
@@ -81,7 +85,7 @@
                                                     <div class="well">
                                                         <todo v-bind:task="task"></todo>
 
-                                                        <span class="glyphicon glyphicon-trash pull-right text-primary" v-on:click="deleteTask(task)"></span>
+                                                        <span id="del" class="glyphicon glyphicon-trash pull-right text-primary" v-on:click="deleteTask(task)"></span>
                                                         <input type="checkbox" v-model="task.done" v-on:click="done = !done">
                                                     </div>
 
@@ -106,9 +110,8 @@
 
                                                     <div class="well">
                                                         <todo v-bind:task="task"></todo>
-
-                                                        <span class="glyphicon glyphicon-trash pull-right text-primary" v-on:click="deleteTask(task)"></span>
-                                                        <input type="checkbox" v-model="task.done" v-on:click="done = !done">
+                                                        <span id="delete" class="glyphicon glyphicon-trash pull-right text-primary" v-on:click="deleteTask(task)"></span>
+                                                        <input id="completed" type="checkbox" v-model="task.done" v-on:click="done = !done">
                                                     </div>
 
                                                 </div>
@@ -128,6 +131,22 @@
 
                     <div class="col-sm-5">
 
+                        <div class="sidebar-nav-fixed pull-right affix" v-if="displayProgressBar">
+                            <div class="alert alert-success" id="success-alert">
+                                <button type="button" class="close" data-dismiss="alert">x</button>
+                                <strong>Success! </strong><br> Task Added.
+                            </div>
+                            <div class="alert alert-info" id="deleted-alert">
+                                <button type="button" class="close" data-dismiss="alert">x</button>
+                                <strong>Success! </strong><br> Task Deleted
+                            </div>
+                            <div class="alert alert-warning" id="completed-alert">
+                                <button type="button" class="close" data-dismiss="alert">x</button>
+                                <strong>Success! </strong><br> Task Completed
+                            </div>
+
+                        </div>
+                        <br><br><br><br>
                         <div class="col-md-3">
                             <div class="sidebar-nav-fixed pull-right affix" v-if="displayProgressBar">
                                 <h4>Status</h4>
@@ -177,7 +196,44 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            $("#success-alert").hide();
+            $("#deleted-alert").hide();
+            $("#completed-alert").hide();
 
+            $("#add").click(function showAlert() {
+                $("#success-alert").alert();
+                $("#success-alert").fadeTo(2000, 500).slideUp(500, function() {
+                    $("#success-alert").slideUp(500);
+                });
+            });
+            $("#deleted,#delete,#del").click(function showAlert() {
+                $("#deleted-alert").alert();
+                $("#deleted-alert").fadeTo(2000, 500).slideUp(500, function() {
+                    $("#deleted-alert").slideUp(500);
+                });
+            });
+
+
+            $('input[type="checkbox"]').click(function() {
+                if ($(this).prop("checked") == true) {
+
+                    $("#completed-alert").alert();
+                    $("#completed-alert").fadeTo(2000, 500).slideUp(500, function() {
+                        $("#completed-alert").slideUp(500);
+                    });
+
+
+                }
+
+            });
+
+
+
+
+        });
+    </script>
 </body>
 
 </html>
