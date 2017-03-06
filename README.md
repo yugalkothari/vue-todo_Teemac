@@ -14,4 +14,4 @@ Demo can be seen here http://yugalkothari.in/projects/vue-todo-bootstrap
 
 ![ScreenShot](https://raw.github.com/yugalpsd1/vue-todo_Teemac/master/img/s1.PNG)
 
-![ScreenShot](https://raw.github.com/yugalpsd1/vue-todo_Teemac/master/img/s1.PNG)
+![ScreenShot](https://raw.github.com/yugalpsd1/vue-todo_Teemac/master/img/s2.PNG)
