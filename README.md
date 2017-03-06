@@ -1,14 +1,14 @@
 # vue-todo_Teemac
 a simple todo app built on vue js and bootstrap.
-
--add task
--delete task
--edit task
--task categories done/undone.
--sticky alerts 
--sticky task statistics
--sticky task progressbar
-
+<br><br>
+-add task<br>
+-delete task<br>
+-edit task<br>
+-task categories done/undone.<br>
+-sticky alerts <br>
+-sticky task statistics<br>
+-sticky task progressbar<br>
+<br><br>
 
 Demo can be seen here http://yugalkothari.in/projects/vue-todo-bootstrap
 
