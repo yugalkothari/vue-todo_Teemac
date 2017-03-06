@@ -11,7 +11,9 @@ a simple todo app built on vue js and bootstrap.
 <br><br>
 
 Demo can be seen here http://yugalkothari.in/projects/vue-todo-bootstrap
-
+<br>
+SCREENSHOTS
+<br>
 ![ScreenShot](https://raw.github.com/yugalpsd1/vue-todo_Teemac/master/img/s1.PNG)
-
+<br><br>
 ![ScreenShot](https://raw.github.com/yugalpsd1/vue-todo_Teemac/master/img/s2.PNG)
