@@ -51,4 +51,7 @@
             margin: 0 5px;
         }
         
-        
+        span {
+            max-width: 200px;
+            word-wrap: break-word;
+        }
