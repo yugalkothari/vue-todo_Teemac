@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+	<style>
+	.taskDone {
+            text-decoration: line-through;
+        }
+		</style>
+    <title>vue-todo_Teemac</title>
+</head>
+
+<body>
+    <div class="container" style="margin-left:80px;margin-top:20px;">
+        <div id="app" class="col-sm-10 col-sm-offset-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+
+                        <div class="content">
+                            <div  v-if="displayAddTasks">
+                                <div class="panel-body">
+                                    <form v-on:submit="addTask">
+                                        <div class="col-sm-8">
+                                            <input height="300" width="300" type="text" class="form-control" v-model="tasks.name" placeholder="add task">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <input type="submit" class="btn btn-primary" value="AddTask">
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                            <div style="margin-left:13px;"class="container" id="tourpackages-carousel" v-if="displayTasks && tasks.length > 0">
+                              
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                         <div class="well" v-for="task in tasks">
+                                            <span :class="{ taskDone: task.done }">{{ task.name }}</span>
+
+                                            <span class="glyphicon glyphicon-trash pull-right text-primary" v-on:click="deleteTask(task)"></span>
+                                            <input type="checkbox" v-model="task.done">
+                                        </div>
+
+                                    </div>
+                                
+                                <!-- End row -->
+                            </div>
+                            <!-- End container -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
