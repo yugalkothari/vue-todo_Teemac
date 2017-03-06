@@ -13,8 +13,8 @@
 	.taskDone {
             text-decoration: line-through;
         }
-		</style>
-    <title>vue-todo_Teemac</title>
+	</style>
+    <title>Vue.js Todo List Application</title>
 </head>
 
 <body>
@@ -39,9 +39,11 @@
                                 </div>
                             </div>
                             <div style="margin-left:13px;"class="container" id="tourpackages-carousel" v-if="displayTasks && tasks.length > 0">
-                              
+                                <div class="row" v-for="task in tasks">
                                     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                                         <div class="well" v-for="task in tasks">
+
+
+                                        <div class="well">
                                             <todo v-bind:task="task"></todo>
 
                                             <span class="glyphicon glyphicon-trash pull-right text-primary" v-on:click="deleteTask(task)"></span>
@@ -49,10 +51,60 @@
                                         </div>
 
                                     </div>
-                                
+                                </div>
                                 <!-- End row -->
                             </div>
                             <!-- End container -->
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-5">
+
+                        <div class="col-md-3">
+                            <div class="sidebar-nav-fixed pull-right affix" v-if="displayProgressBar">
+                                <h4>Status</h4>
+                                <div class="well">
+                                    <ul class="nav ">
+                                        <li class="nav-header">
+                                            <div class="completionProgressGreyBar">
+                                                <div class="completionProgressGreenBar text-center" :style="{ width: percentageOfTasksCompleted + '%' }">{{ Math.round(percentageOfTasksCompleted) }}%</div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--/.well -->
+                            </div>
+                            <!--/sidebar-nav-fixed -->
+                        </div>
+                        <br><br><br><br><br><br>
+                        <div class="col-md-3">
+                            <div class="sidebar-nav-fixed affix" v-if="displayTaskStatistics">
+                                <div class="well">
+                                    <ul class="nav ">
+                                        <li>
+                                            <div id="circleb"></div>
+                                            <p v-on:mouseover="changeTotalTasks">Total Tasks: {{ tasks.length }}</p>
+                                        </li>
+                                        <li>
+                                            <div id="circler"></div>
+                                            <p v-on:mouseover="changeLeftToDo">Tasks Left: {{ leftToDo }}</p>
+                                        </li>
+                                        <li>
+                                            <div id="circleg"></div>
+                                            <p v-on:mouseover="changeCheckMarked">Completed: {{ checkMarkedTasks }}</p>
+                                        </li>
+                                        <li class="nav-header">{{ displayedTasksStatView }}</li>
+                                        <li>
+                                            <h3 style="padding: 10px;" v-bind:class="manageable" class="green">{{ leftToDo
+                                                < 5 ? 'Manageable' : 'Overload' }}</h3>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--/.well -->
+                            </div>
+                            <!--/sidebar-nav-fixed -->
                         </div>
                     </div>
                 </div>
