@@ -31,7 +31,53 @@ window.onload = function() {
             displayAddTasks: true,
             displayTaskStatistics: true,
             displayedTasksStat: 'totalTasks',
-            tasks: []
+            tasks: [{
+                    name: "add edit feature",
+                    done: true
+                },
+                {
+                    name: "change ui",
+                    done: true
+                },
+                {
+                    name: "add bootstrap",
+                    done: true
+                },
+
+                {
+                    name: "fix bugs",
+                    done: true
+                },
+                {
+                    name: "add task status",
+                    done: true
+                },
+                {
+                    name: "add dragula.js",
+                    done: false
+                },
+				{
+                    name: "implement dragula js",
+                    done: false
+                },
+				{
+                    name: "remove dragula js",
+                    done: false
+                },
+				{
+                    name: "add sortable js",
+                    done: false
+                },
+				{
+                    name: "implement sortable js",
+                    done: false
+                },
+				{
+                    name: "change ui again",
+                    done: false
+                },
+
+            ]
         },
         methods: {
 

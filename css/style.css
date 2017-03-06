@@ -1,0 +1,29 @@
+ body {
+            padding-bottom: 40px;
+            padding-top: 60px;
+        }
+        
+        .sidebar-nav-fixed {
+            width: 14%;
+        }
+        
+        .taskDone {
+            text-decoration: line-through;
+        }
+        
+        .completionProgressGreyBar {
+            background-color: #f9f9f9;
+        }
+        
+        .completionProgressGreenBar {
+            background-color: #5cb85c;
+        }
+        
+        .green {
+            background-color: #f9f9f9;
+        }
+        
+        .red {
+            background-color: #d9534f;
+        }
+        
