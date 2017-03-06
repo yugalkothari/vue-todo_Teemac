@@ -6,7 +6,7 @@ window.onload = function() {
             }
         },
         props: ['task'],
-        template: '<div><span :class="{ taskDone: task.done }" v-on:click="clicked" v-show="!inEditMode">{{task.name}}</span><textarea  style="max-width=40px;" height="600" class="form-control" v-on:keyup.enter="saved" v-model="task.name" v-show="inEditMode"/></div>',
+        template: '<div><span :class="{ taskDone: task.done }" v-on:click="clicked" v-show="!inEditMode">{{task.name}}</span><textarea  style="max-width=40px;" height="600" autofocus class="form-control" v-on:blur="saved" v-on:keyup.enter="saved" v-model="task.name" v-show="inEditMode"/></div>',
         methods: {
             clicked: function() {
                 this.inEditMode = true;
