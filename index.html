@@ -18,7 +18,26 @@
 <body>
     <div class="container">
         <div id="app" class="col-sm-10 col-sm-offset-1">
+            <div id="wrap">
+                <div class="navbar-fixed-top">
 
+
+                    <div class="alert alert-success" id="success-alert">
+                        <strong>Success!</strong> Task Added.
+                    </div>
+                    <div class="alert alert-info" id="deleted-alert">
+                        <strong>Success!</strong> Task Deleted
+                    </div>
+                    <div class="alert alert-warning" id="completed-alert">
+                        <strong>Success!</strong> Task Completed
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
 
 
 
@@ -38,14 +57,14 @@
                                 </form>
                             </div>
                         </div>
-						<div class="col-md-7" style="margin-left:12px;">
-                        <ul  class="nav nav-tabs"style="margin-bottom:10px;border-bottom:0px">
-                            <li class="active"><a data-toggle="tab" href="#home">To-Do</a></li>
-                            <li><a data-toggle="tab" href="#menu1">Done</a></li>
-                            <li><a data-toggle="tab" href="#menu2">All</a></li>
-                        </ul>
-						</div>
-                        
+                        <div class="col-md-7" style="margin-left:12px;">
+                            <ul class="nav nav-tabs" style="margin-bottom:10px;border-bottom:0px">
+                                <li class="active"><a data-toggle="tab" href="#home">To-Do</a></li>
+                                <li><a data-toggle="tab" href="#menu1">Done</a></li>
+                                <li><a data-toggle="tab" href="#menu2">All</a></li>
+                            </ul>
+                        </div>
+
                         <div class="tab-content">
                             <div id="home" class="tab-pane fade in active">
 
@@ -53,7 +72,7 @@
 
                                     <div class="content">
 
-                                        <div  class="container" id="tourpackages-carousel" v-if="displayTasks && tasks.length > 0">
+                                        <div class="container" id="tourpackages-carousel" v-if="displayTasks && tasks.length > 0">
                                             <div class="row" v-for="task in tasks">
                                                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" v-if="!task.done">
 
@@ -79,7 +98,7 @@
 
                                     <div class="content">
 
-                                        <div  class="container" id="tourpackages-carousel" v-if="displayTasks && tasks.length > 0">
+                                        <div class="container" id="tourpackages-carousel" v-if="displayTasks && tasks.length > 0">
                                             <div class="row" v-for="task in tasks">
                                                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" v-if="task.done">
 
@@ -105,7 +124,7 @@
 
                                     <div class="content">
 
-                                        <div  class="container" id="tourpackages-carousel" v-if="displayTasks && tasks.length > 0">
+                                        <div class="container" id="tourpackages-carousel" v-if="displayTasks && tasks.length > 0">
                                             <div class="row" v-for="task in tasks">
                                                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 
@@ -133,22 +152,8 @@
 
                     <div class="col-sm-5 " style="margin-top: 70px;">
 
-                        <div class="sidebar-nav-fixed pull-right affix" v-if="displayProgressBar">
-                            <div class="alert alert-success" id="success-alert">
-                                <button type="button" class="close" data-dismiss="alert">x</button>
-                                <strong>Success! </strong><br> Task Added.
-                            </div>
-                            <div class="alert alert-info" id="deleted-alert">
-                                <button type="button" class="close" data-dismiss="alert">x</button>
-                                <strong>Success! </strong><br> Task Deleted
-                            </div>
-                            <div class="alert alert-warning" id="completed-alert">
-                                <button type="button" class="close" data-dismiss="alert">x</button>
-                                <strong>Success! </strong><br> Task Completed
-                            </div>
 
-                        </div>
-                        <br><br><br><br>
+
                         <div class="col-md-3">
                             <div class="sidebar-nav-fixed pull-right affix" v-if="displayProgressBar">
                                 <h4>Status</h4>
@@ -165,7 +170,7 @@
                             </div>
                             <!--/sidebar-nav-fixed -->
                         </div>
-						<br><br><br><br><br><br>
+                        <br><br><br><br><br><br>
                         <div class="col-md-3">
                             <div class="sidebar-nav-fixed affix" v-if="displayTaskStatistics">
                                 <div class="well" style="background-color:#607D8B;color:white;">
@@ -182,8 +187,8 @@
                                             <div id="circleg"></div>
                                             <p v-on:mouseover="changeCheckMarked">Completed: {{ checkMarkedTasks }}</p>
                                         </li>
-										<div id="circleo"></div>
-                                       <b> <li class="nav-header">{{ displayedTasksStatView }}</li></b>
+                                        <div id="circleo"></div>
+                                        <b> <li class="nav-header">{{ displayedTasksStatView }}</li></b>
                                         <li>
                                             <h3 align="center" style="padding: 10px;" v-bind:class="manageable" class="green">{{ leftToDo
                                                 < 5 ? 'Manageable' : 'Overload' }}</h3>
@@ -204,8 +209,8 @@
             $("#success-alert").hide();
             $("#deleted-alert").hide();
             $("#completed-alert").hide();
-            
-			$('input[type="checkbox"]').click(function() {
+
+            $('input[type="checkbox"]').click(function() {
                 if ($(this).prop("checked") == true) {
 
                     $("#completed-alert").alert();
